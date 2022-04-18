@@ -1,5 +1,5 @@
 import React from 'react';
-
+//don't modify for mvp
 
 const TotalDisplay = (props) => {
     const { value } = props;

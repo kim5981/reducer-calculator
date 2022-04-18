@@ -1,4 +1,5 @@
 import React from 'react';
+//don't mod for mvp
 
 const CalcButton = (props) => {
     const { value, onClick = (e)=>{}, size = 4} = props;
