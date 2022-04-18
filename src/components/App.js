@@ -1,16 +1,25 @@
-import React from 'react';
-import reducer from "../reducers";
+import React, { useState, useReducer } from 'react';
+import reducer, { initialState } from "../reducers";
 
 import './App.css';
 
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
 
+// initialState = {
+//   total: 100,
+//   operation: "*",
+//   memory: 100
+// }
+
 function App() {
+  
+  const [ state, dispatch ] = useReducer( reducer, initialState );
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
-        <a className="navbar-brand" href="#"> Reducer Challenge</a>
+        <a className="navbar-brand" href="#"> React Calculator </a>
       </nav>
 
       <div className = "container row mt-5">
