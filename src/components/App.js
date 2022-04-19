@@ -1,26 +1,23 @@
+
 import React, { useReducer } from 'react';
 import reducer, { initialState } from "../reducers";
-import { addOne, applyNumber } from "../actions";
+import { applyNumber } from "../actions";
 
 import './App.css';
 
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
 
-// initialState = {
-//   total: 0,
-//   operation: "*",
-//   memory: 0
-// }
 
 function App() {
   
   const [ state, dispatch ] = useReducer( reducer, initialState );
 
-  const handleOne = () => {
-    //this is the fn coming from axn file
-    dispatch(addOne())
+  const handleClick = (number) => {
+    dispatch(applyNumber(number))
   }
+
+
 
   return (
     <div className="App">
@@ -45,8 +42,14 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1} onClick={ handleOne }/>
-              <CalcButton value={2}/>
+              <CalcButton 
+                value={1} 
+                onClick={ () => handleClick(1) }
+              />
+              <CalcButton
+                value={2}
+                onClick={ () => "" }
+              />
               <CalcButton value={3}/>
             </div>
 
